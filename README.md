@@ -1,4 +1,4 @@
-[![AndroidDeviceGenerator](https://img.shields.io/badge/AndroidDeviceGenerator%20-Version%201.0.1-green?style=plastic&logo=codemagic)](https://python.org)
+[![AndroidDeviceGenerator](https://img.shields.io/badge/AndroidDeviceGenerator%20-Version%201.0.0-green?style=plastic&logo=codemagic)](https://python.org)
 
 
 
@@ -40,9 +40,5 @@ print(device)
 #     }
 
 ```
- 
-
-
-
 
 Powered by [Abbas Bachari](https://github.com/abbas-bachari).
