@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='AndroidDeviceGenerator',
-    version='1.0.0',
+    version='1.0.1',
     author='Abbas Bachari',
     author_email='abbas-bachari@hotmail.com',
     description='Android device model and user-agent Generator',

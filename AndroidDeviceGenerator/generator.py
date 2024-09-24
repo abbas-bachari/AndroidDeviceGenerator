@@ -5,7 +5,7 @@ from .devices import *
 class DviceData:
     user_agent="Mozilla/5.0 (Linux; Android 13; Samsung SM-G998B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.6668.54 Mobile Safari/537.36"
     device_model = "Samsung SM-G998B"
-    sdk_version= "SDK 33"
+    sdk_version= '33'
     android_version = "13"
     chrome_version="129.0.6668.54"
     webkit_version="537.36"

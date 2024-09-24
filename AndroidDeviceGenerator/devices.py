@@ -4960,19 +4960,19 @@ class Device(SystemInfo):
     ]
 
     system_versions = [
-        ["6.0","SDK 23"],
-        ["7.0","SDK 24"],
-        ["7.1","SDK 25"],
-        ["8.0.0","SDK 26"],
-        ["8.1.0","SDK 27"],
-        ["9","SDK 28"],
-        ["10","SDK 29"],
-        ["11","SDK 30"],
-        ["12","SDK 31"],
-        ["12L","SDK 32"],
-        ["13","SDK 33"],
-        ["14","SDK 34"],
-        ["15","SDK 35"],
+        ["6.0","23"],
+        ["7.0","24"],
+        ["7.1","25"],
+        ["8.0.0","26"],
+        ["8.1.0","27"],
+        ["9","28"],
+        ["10","29"],
+        ["11","30"],
+        ["12","31"],
+        ["12L","32"],
+        ["13","33"],
+        ["14","34"],
+        ["15","35"],
     ]
     
 
@@ -4987,7 +4987,8 @@ class Device(SystemInfo):
 
             for model in cls.device_models:
                 for version in cls.system_versions:
-                    results.append(DeviceInfo(model, version[1],version[0]))
+                    android_ver,sdk_ver=version
+                    results.append(DeviceInfo(model, sdk_ver,android_ver))
 
             cls.deviceList = results
 
