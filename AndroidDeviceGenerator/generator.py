@@ -3,20 +3,22 @@ from .devices import *
 
 
 class DviceData:
-    user_agent="Mozilla/5.0 (Linux; Android 13; Samsung SM-G998B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.6668.54 Mobile Safari/537.36"
-    device_model = "Samsung SM-G998B"
-    sdk_version= '33'
-    android_version = "13"
-    chrome_version="129.0.6668.54"
-    webkit_version="537.36"
-    safari_version="537.36"
+    user_agent:str
+    brands_header:str
+    device_model:str
+    sdk_version:str
+    android_version :str
+    chrome_version:str
+    webkit_version:str
+    safari_version:str
     def __init__(self,device_data:dict) -> None:
         if device_data and isinstance(device_data,dict):
             self.__dict__.update(device_data)
     
     def to_dict(self):
             return dict(
-                 user_agent=self.user_agent,
+                user_agent=self.user_agent,
+                brands_header=self.brands_header,
                 device_model=self.device_model,
                 sdk_version=self.sdk_version,
                 android_version=self.android_version,
@@ -32,7 +34,7 @@ class DviceData:
 
 class Generator:
 
-        def __init__(self,chrome_version:str="129.0.6668.54",webkit_version:str="537.36",safari_version:str="537.36") -> None:
+        def __init__(self,chrome_version:str="129.0.0.0",webkit_version:str="537.36",safari_version:str="537.36") -> None:
             
             self.chrome_version=chrome_version
             self.webkit_version=webkit_version
@@ -54,19 +56,26 @@ class Generator:
             """
             
             device = Device.RandomDevice(unique_id)
-            self.device_model=device.device_model
-            self.sdk_version=device.sdk_version
-            self.android_version=device.android_version
             
-            wv="; wv" if webview else ""
-            self.user_agent=f"Mozilla/5.0 (Linux; Android {device.android_version}; {device.device_model}{wv}) AppleWebKit/{self.webkit_version} (KHTML, like Gecko) Chrome/{self.chrome_version} Mobile Safari/{self.safari_version}"
             
+            
+            
+            brand_ver=self.chrome_version.split('.')[0]
+            if webview:
+                wv="; wv"
+                brands_header= f'"Android WebView";v="{brand_ver}","Chromium";v="{brand_ver}", "Not=A?Brand";v="{round(device.sdk_version*0.75)}"'
+            else:
+                wv= ""
+                brands_header= f'"Google Chrome";v="{brand_ver}","Chromium";v="{brand_ver}", "Not=A?Brand";v="{round(device.sdk_version*0.75)}"'
+            
+            user_agent=f"Mozilla/5.0 (Linux; Android {device.android_version}; {device.device_model}{wv}) AppleWebKit/{self.webkit_version} (KHTML, like Gecko) Chrome/{self.chrome_version} Mobile Safari/{self.safari_version}"
             
             data=dict(
-                user_agent=self.user_agent,
-                device_model=self.device_model,
-                sdk_version=self.sdk_version,
-                android_version=self.android_version,
+                user_agent=user_agent,
+                brands_header=brands_header,
+                device_model=device.device_model,
+                sdk_version =device.sdk_version,
+                android_version=device.android_version,
                 chrome_version=self.chrome_version,
                 webkit_version=self.webkit_version,
                 safari_version=self.safari_version

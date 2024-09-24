@@ -18,7 +18,7 @@ class BaseObject(object, metaclass=BaseMetaClass):
     pass
 
 class DeviceInfo(object):
-    def __init__(self, model, sdk_version,android_version:str=None) -> None:
+    def __init__(self, model:str, sdk_version:int,android_version:str) -> None:
         self.device_model = model
         self.sdk_version = sdk_version
         self.android_version = android_version
@@ -4960,19 +4960,19 @@ class Device(SystemInfo):
     ]
 
     system_versions = [
-        ["6.0","23"],
-        ["7.0","24"],
-        ["7.1","25"],
-        ["8.0.0","26"],
-        ["8.1.0","27"],
-        ["9","28"],
-        ["10","29"],
-        ["11","30"],
-        ["12","31"],
-        ["12L","32"],
-        ["13","33"],
-        ["14","34"],
-        ["15","35"],
+        ["6.0",23],
+        ["7.0",24],
+        ["7.1",25],
+        ["8.0.0",26],
+        ["8.1.0",27],
+        ["9",28],
+        ["10",29],
+        ["11",30],
+        ["12",31],
+        ["12L",32],
+        ["13",33],
+        ["14",34],
+        ["15",35],
     ]
     
 
