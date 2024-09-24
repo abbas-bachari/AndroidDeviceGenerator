@@ -34,7 +34,7 @@ print(device)
 
 # >>> {
 #       "device_model": "HTC HTC 2Q4R400",
-#       "sdk_version": "SDK 28",
+#       "sdk_version": "28",
 #       "android_version": "9",
 #       "user_agent": "Mozilla/5.0 (Linux; Android 9; HTC HTC 2Q4R400) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.6668.54 Mobile Safari/537.36"
 #     }
