@@ -63,10 +63,10 @@ class Generator:
             brand_ver=self.chrome_version.split('.')[0]
             if webview:
                 wv="; wv"
-                brands_header= f'"Android WebView";v="{brand_ver}","Chromium";v="{brand_ver}", "Not=A?Brand";v="{round(device.sdk_version*0.75)}"'
+                brands_header= f'"Android WebView";v="{brand_ver}","Chromium";v="{brand_ver}","Not=A?Brand";v="{round(device.sdk_version*0.75)}"'
             else:
                 wv= ""
-                brands_header= f'"Google Chrome";v="{brand_ver}","Chromium";v="{brand_ver}", "Not=A?Brand";v="{round(device.sdk_version*0.75)}"'
+                brands_header= f'"Google Chrome";v="{brand_ver}","Chromium";v="{brand_ver}","Not=A?Brand";v="{round(device.sdk_version*0.75)}"'
             
             user_agent=f"Mozilla/5.0 (Linux; Android {device.android_version}; {device.device_model}{wv}) AppleWebKit/{self.webkit_version} (KHTML, like Gecko) Chrome/{self.chrome_version} Mobile Safari/{self.safari_version}"
             
